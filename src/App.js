@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import FilmListing from './components/FilmListing'
-import FilmDetails from './components/FilmDetails'
-import Menu from './components/Menu'
+import FilmListing from './components/FilmListing/FilmListing'
+import FilmDetails from './components/FilmDetails/FilmDetails'
+import Menu from './components/Menu/Menu'
 
 import TMDB from './TMDB'
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FilmPoster from './FilmPoster'
-import Fave from '../Fave'
+import FilmPoster from '../FilmPoster/FilmPoster.jsx'
+import Fave from '../Fave/Fave.jsx'
 
 const FilmRow = (props) => {
     const {film} = props

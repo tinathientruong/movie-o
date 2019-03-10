@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import FilmRow from './FilmRow'
+import FilmRow from '../FilmRow/FilmRow'
 
 const FilmListing = (props) => {
    const { filter, films, faves, tvShows  } = props; 
