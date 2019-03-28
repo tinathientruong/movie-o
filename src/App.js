@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+// import './App.scss';
 
 import FilmListing from './components/FilmListing/FilmListing'
 import FilmDetails from './components/FilmDetails/FilmDetails'
-import Menu from './components/Menu/Menu'
+import Header from './components/Header/Header'
 
 import TMDB from './TMDB'
 
@@ -14,7 +14,9 @@ class App extends Component {
     faves: [],
     current: {},
     tvShows: [], 
-    filter: 'movies'
+    filter: 'movies',
+    searchedList: [],
+    searchValue: ''
   }
 
   componentDidMount () {
@@ -56,20 +58,47 @@ class App extends Component {
       this.setState({ filter })
   }
 
+  handleSearchClick = (e) => {
+    e.preventDefault(); 
+
+    const filmFilteredList = this.state.films.filter(film =>
+        film.title.toLocaleLowerCase().includes(this.state.searchValue.toLocaleLowerCase())
+     );
+
+     const tvFilteredList = this.state.tvShows.filter(show =>
+        show.name.toLocaleLowerCase().includes(this.state.searchValue.toLocaleLowerCase())
+     );
+
+     const totalFilteredList = filmFilteredList.concat(tvFilteredList); 
+
+     this.setState({
+       filter: 'searchedList', 
+       searchedList: totalFilteredList
+      })
+  }
+
+  getUserInput = (e) => {
+    e.preventDefault(); 
+    this.setState({ searchValue: e.target.value });
+  }
+
   render() {
-    const { films, faves, current, tvShows, filter } = this.state
+    const { films, faves, current, tvShows, filter, searchedList } = this.state
     return (
       <div className="film-library">
-        <Menu 
-          films = {films}
-          faves = {faves}
-          tvShows = {tvShows}
-          onFilterClick = {this.handleFilterClick }
+        <Header 
+          films = { films }
+          faves = { faves }
+          tvShows = { tvShows }
+          onFilterClick = { this.handleFilterClick }
+          onSearchClick = { this.handleSearchClick }
+          getUserInput = { this.getUserInput }
         />
         <FilmListing
           films={ films }
           faves={ faves }
           tvShows= { tvShows }
+          searchedList= { searchedList }
           onFaveToggle={ this.handleFaveToggle }
           onDetailsClick={ this.handleDetailsClick }
           filter = {filter}

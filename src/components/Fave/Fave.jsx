@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./styles.scss";
 
 class Fave extends Component {
 
@@ -11,9 +12,9 @@ class Fave extends Component {
     const isFave = this.props.isFave ? 'remove_from_queue' : 'add_to_queue'
 
     return (
-      <div className={ `film-row-fave ${ isFave }` } onClick={ this.handleClick }>
+      <button className={ `film-row-fave ${ isFave }` } onClick={ this.handleClick }>
         <p className="material-icons">{ isFave }</p>
-      </div>
+      </button>
     );
   }
 }

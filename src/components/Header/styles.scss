@@ -1,0 +1,27 @@
+.globalHeader{
+  display: flex;
+  background: #fff;
+  padding: 10px 40px;
+  z-index: 100;
+  position: fixed;
+  pointer-events: auto;
+  align-items: center; 
+  width: 100%; 
+  &__searchbar{
+      display: flex;
+      position: relative;
+      border: solid 3px #EFA71A;
+      border-radius: 27px;
+      padding: 5px 10px;
+      input{
+          border: none;
+      }
+  }
+}
+
+.globalNav{
+    &__links{
+        display: flex;
+        list-style: none;
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./styles.scss";
 
 const FilmDetails = (props) => {
   const { film } = props; 
@@ -15,7 +16,7 @@ const FilmDetails = (props) => {
       <div className="film-meta">
         <h2 className="film-tagline">{film.tagline}</h2>
         <p className="film-detail-overview">
-          <img src={posterUrl} className="film-detail-poster" alt={film.title} />
+          <img src={posterUrl} className="film-detail-poster" alt="" />
           {film.overview}
         </p>
       </div>

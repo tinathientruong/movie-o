@@ -1,0 +1,41 @@
+@import "./__mixin.scss"; 
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    @include breakpoint(md) {
+        font-size: 14px;
+    }
+        
+    @include breakpoint(lg) {
+        font-size: 12px;
+    }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+button{
+  border: none;
+  background: transparent;
+}
+
+

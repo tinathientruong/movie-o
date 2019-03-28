@@ -1,9 +1,10 @@
 import React from 'react';
 
 import FilmRow from '../FilmRow/FilmRow'
+import "./styles.scss";
 
 const FilmListing = (props) => {
-   const { filter, films, faves, tvShows  } = props; 
+   const { filter, films, faves, tvShows,searchedList } = props; 
    let results;
 
    switch(filter){
@@ -15,6 +16,9 @@ const FilmListing = (props) => {
         break; 
       case 'TV': 
         results = tvShows;
+        break; 
+      case 'searchedList': 
+        results = searchedList;
         break; 
       default: 
         results = films;

@@ -2,6 +2,7 @@ import React from 'react';
 
 import FilmPoster from '../FilmPoster/FilmPoster.jsx'
 import Fave from '../Fave/Fave.jsx'
+import "./styles.scss";
 
 const FilmRow = (props) => {
     const {film} = props
