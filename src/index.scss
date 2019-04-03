@@ -36,6 +36,9 @@ figure {
 button{
   border: none;
   background: transparent;
+  &:hover{
+    outline: none;
+  }
 }
 
 
